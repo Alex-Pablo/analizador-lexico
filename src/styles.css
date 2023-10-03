@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+
+@import '~codemirror/lib/codemirror.css';
+
+@import '~codemirror/theme/night.css'; /* es muchor este*/
+@import '~codemirror/theme/3024-night.css';
+@import '~codemirror/theme/ayu-dark.css';
+@import '~codemirror/theme/base16-dark.css' /*este tambien esta chido */;
+@import '~codemirror/theme/duotone-dark.css';
+@import '~codemirror/theme/oceanic-next.css' /*me gusta*/;
+@import '~codemirror/theme/material-darker.css';
+
+@import '~codemirror/theme/erlang-dark.css' /*me gusta*/;
+@import '~codemirror/theme/dracula.css';
+
+@import '~codemirror/addon/fold/foldgutter.css';
+@import '~codemirror/addon/lint/lint.css';
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins'
+
+}
