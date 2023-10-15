@@ -70,8 +70,25 @@ export class TokensService {
     pattern: /(['"])(.*?)\1/
   })
 
+  PalaReservada = createToken({
+    name : "Palabra Reservada",
+    pattern: /(let|const)/
+  })
+
+  Identificador = createToken({
+    name : "Identificador",
+    pattern: /[A-Za-z]+/
+  })
+
+  SignoIgual = createToken({
+    name : "Signo Igual",
+    pattern: /\=/
+  })
+
   allTokens = [
+    this.PalaReservada,
     this.Comentario,
+    this.Identificador,
     this.Potencia,
     this.Multiplicacion,
     this.Suma,
@@ -81,6 +98,7 @@ export class TokensService {
     this.NumeroEntero,
     this.ParentesisIzq,
     this.ParentesisDere,
-    this.CadenaTexto
+    this.CadenaTexto,
+    this.SignoIgual
   ]
 }

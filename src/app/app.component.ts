@@ -6,7 +6,7 @@ import 'codemirror/mode/css/css'
 import 'codemirror/mode/mathematica/mathematica'
 import 'codemirror/mode/asciiarmor/asciiarmor'
 import 'codemirror/mode/python/python'
-import  { Lexer } from 'chevrotain'
+import  { Lexer ,CstParser} from 'chevrotain'
 import { TokensService } from './services/tokens.service';
 //import { ViewEncapsulation } from '@angular/compiler';
 
@@ -24,7 +24,7 @@ export class AppComponent {
   constructor( private tokensService: TokensService ){}
 
   ngOnInit(){
-    this.inputCode = "4 * \n1 \n2+";
+    this.inputCode = "";
   }
 
   codeMirrorOptions: any = {
@@ -62,13 +62,17 @@ export class AppComponent {
     this.outputToken = " ";
     const divideCodeByLine = this.inputCode.split('\n');
     this.convertTokenize(divideCodeByLine);
-    console.log(divideCodeByLine);
     
   }
+
+
   
   convertTokenize(codeDivideLine:any) {
+
+
+
     const codeSeparate:any= [];
-    const lexer = new Lexer(this.tokensService.allTokens)
+    const lexer = new Lexer(this.tokensService.allTokens,{})
     for (let index = 0; index < codeDivideLine.length; index++) {
       const {tokens} = lexer.tokenize(codeDivideLine[index]);
       //set all the values, we get just the value we need
